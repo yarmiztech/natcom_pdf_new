@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<record id="invoice_tree_natcom" model="ir.ui.view">
+        <field name="name">account.invoice.tree</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_out_invoice_tree"/>
+
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="replace">
+                <field name="system_inv_no"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_date']" position="replace">
+                <field name="invoice_date_time"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_date']" position="replace">
+                <field name="invoice_date" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='invoice_date_due']" position="replace">
+                <field name="invoice_date_due" invisible="1"/>
+            </xpath>
+        </field>
+</record>
+
+
+
+
+</odoo>
